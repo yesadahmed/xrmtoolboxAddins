@@ -94,6 +94,7 @@ namespace JsonToCSharp
                 mySettings.LastUsedOrganizationWebappUrl = detail.WebApplicationUrl;
                 LogInfo("Connection has changed to: {0}", detail.WebApplicationUrl);
             }
+            ExecuteMethod(GetAllEntities);
         }
 
         private void lblClose_Click(object sender, EventArgs e)
@@ -149,9 +150,15 @@ namespace JsonToCSharp
                 Message = "Please wait loading crm entities ....",
                 Work = (worker, args) =>
                 {
+                    try
+                    {
+                        args.Result = ConnectionDetail.ServiceClient.ExecuteCrmWebRequest(HttpMethod.Get,
+                        "EntityDefinitions?$select=LogicalName,DisplayName,EntitySetName", null, null, "application/json");
+                    }
+                    catch (Exception)
+                    {
 
-                    args.Result = ConnectionDetail.ServiceClient.ExecuteCrmWebRequest(HttpMethod.Get,
-                         "EntityDefinitions?$select=LogicalName,DisplayName,EntitySetName", null, null, "application/json");
+                    }
 
                 },
                 PostWorkCallBack = (args) =>
@@ -160,62 +167,70 @@ namespace JsonToCSharp
                     {
                         MessageBox.Show(args.Error.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    var result = args.Result as HttpResponseMessage;
 
-                    if (result != null && result.IsSuccessStatusCode)
+                    try
                     {
-                        var status = result.StatusCode;
-                        var json = result.Content.ReadAsStringAsync().Result;
-                        var allEntities = JsonConvert.DeserializeObject<AllEntities>(json);
-                        if (allEntities != null && allEntities.value != null && allEntities.value.Count > 0)
+                        var result = args.Result as HttpResponseMessage;
+
+                        if (result != null && result.IsSuccessStatusCode)
                         {
-                            List<EntityModel> entitiesToInclude = new List<EntityModel>();
-                            CommonHelper commonHelper = new CommonHelper();
-                            foreach (var item in allEntities.value)
+                            var status = result.StatusCode;
+                            var json = result.Content.ReadAsStringAsync().Result;
+                            var allEntities = JsonConvert.DeserializeObject<AllEntities>(json);
+                            if (allEntities != null && allEntities.value != null && allEntities.value.Count > 0)
                             {
-                                if (commonHelper.skipStartsWith.Any(f => item.LogicalName.StartsWith(f)))
-                                    continue;
-
-                                var localizedLabel = item.DisplayName.LocalizedLabels.FirstOrDefault();//cjeck fo rinternal system entities
-                                if (localizedLabel != null)
+                                List<EntityModel> entitiesToInclude = new List<EntityModel>();
+                                CommonHelper commonHelper = new CommonHelper();
+                                foreach (var item in allEntities.value)
                                 {
-                                    if (!commonHelper.excludedList.Contains(localizedLabel.Label))
+                                    if (commonHelper.skipStartsWith.Any(f => item.LogicalName.StartsWith(f)))
+                                        continue;
+
+                                    var localizedLabel = item.DisplayName.LocalizedLabels.FirstOrDefault();//cjeck fo rinternal system entities
+                                    if (localizedLabel != null)
                                     {
-                                        if (!(localizedLabel.Label.StartsWith("msdyn_")))
+                                        if (!commonHelper.excludedList.Contains(localizedLabel.Label))
                                         {
-                                            entitiesToInclude.Add(new EntityModel()
+                                            if (!(localizedLabel.Label.StartsWith("msdyn_")))
                                             {
-                                                LogicalName = item.LogicalName,
-                                                DisplayName = localizedLabel.Label,
-                                                EntitySetName = item.EntitySetName
-                                            });
+                                                entitiesToInclude.Add(new EntityModel()
+                                                {
+                                                    LogicalName = item.LogicalName,
+                                                    DisplayName = localizedLabel.Label,
+                                                    EntitySetName = item.EntitySetName
+                                                });
+                                            }
+
                                         }
-
                                     }
+
+                                } //foreach
+                                if (entitiesToInclude.Count > 0)
+                                {
+                                    entitiesToInclude = entitiesToInclude.OrderBy(ent => ent.LogicalName).ToList();
+                                    //bind combo and text
+                                    var cmbBindingSource = new BindingSource();
+                                    cmbBindingSource.DataSource = entitiesToInclude;
+
+                                    cmbEntities.DataSource = cmbBindingSource.DataSource;
+
+                                    cmbEntities.DisplayMember = "DisplayName";
+                                    cmbEntities.ValueMember = "EntitySetName";
+
+                                    // now load account json
+                                    LoadNewJson("accounts");
                                 }
-
-                            } //foreach
-                            if (entitiesToInclude.Count > 0)
-                            {
-                                entitiesToInclude = entitiesToInclude.OrderBy(ent => ent.LogicalName).ToList();
-                                //bind combo and text
-                                var cmbBindingSource = new BindingSource();
-                                cmbBindingSource.DataSource = entitiesToInclude;
-
-                                cmbEntities.DataSource = cmbBindingSource.DataSource;
-
-                                cmbEntities.DisplayMember = "DisplayName";
-                                cmbEntities.ValueMember = "EntitySetName";
-
-                                // now load account json
-                                LoadNewJson("accounts");
+                                //MessageBox.Show($"status {status},  data { data}");
                             }
+                        }
+                        else
+                        {
                             //MessageBox.Show($"status {status},  data { data}");
                         }
-                    }
-                    else
+
+                    } //try
+                    catch (Exception)
                     {
-                        //MessageBox.Show($"status {status},  data { data}");
                     }
 
                 }
@@ -230,9 +245,16 @@ namespace JsonToCSharp
                 Message = $"loading {entityName} json ....",
                 Work = (worker, args) =>
                 {
-
-                    args.Result = ConnectionDetail.ServiceClient.ExecuteCrmWebRequest(HttpMethod.Get,
+                    try
+                    {
+                        args.Result = ConnectionDetail.ServiceClient.ExecuteCrmWebRequest(HttpMethod.Get,
                          $"{entityName}?$top=1", null, null, "application/json");
+                    }
+                    catch (Exception)
+                    {
+
+
+                    }
 
                 },
                 PostWorkCallBack = (args) =>
@@ -241,6 +263,7 @@ namespace JsonToCSharp
                     {
                         MessageBox.Show(args.Error.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    richTextBoxDest.Text = string.Empty;
                     var result = args.Result as HttpResponseMessage;
 
                     if (result != null && result.IsSuccessStatusCode)
@@ -254,7 +277,6 @@ namespace JsonToCSharp
                             allselections.Add(new SelctionPattern() { SelectionStart = match.Index, SelectionLength = match.Length, Text = match.Value });
 
                         }
-                        MessageBox.Show(allselections.Count.ToString());
                         foreach (var pos in allselections)
                         {
                             richTextBoxSource.Select(pos.SelectionStart, pos.SelectionLength);
@@ -276,7 +298,7 @@ namespace JsonToCSharp
 
         private void MyPluginControl_Load_1(object sender, EventArgs e)
         {
-            ShowInfoNotification("This is a notification that can lead to XrmToolBox repository", new Uri("https://github.com/MscrmTools/XrmToolBox"));
+            //ShowInfoNotification("This is a notification that can lead to XrmToolBox repository", new Uri("https://github.com/MscrmTools/XrmToolBox"));
 
             // Loads or creates the settings for the plugin
             if (!SettingsManager.Instance.TryLoad(GetType(), out mySettings))
@@ -295,6 +317,7 @@ namespace JsonToCSharp
 
         private void btnConvert_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(richTextBoxSource.Text)) return;
             WorkAsync(new WorkAsyncInfo
             {
 
@@ -342,14 +365,26 @@ namespace JsonToCSharp
                                 sw.Flush();
 
                                 richTextBoxDest.Text = sw.ToString();
+                            }
+                            var pattern = @"public class|int|string|Guid|DateTime|bool|double|object|IList<[A-za-z*]*>";
+                            List<SelctionPattern> allselections = new List<SelctionPattern>();
+                            foreach (Match match in Regex.Matches(richTextBoxDest.Text, pattern))
+                            {
+                                allselections.Add(new SelctionPattern() { SelectionStart = match.Index, SelectionLength = match.Length, Text = match.Value });
 
-
+                            }
+                            foreach (var pos in allselections)
+                            {
+                                richTextBoxDest.Select(pos.SelectionStart, pos.SelectionLength);
+                                richTextBoxDest.SelectionColor = Color.Blue;
                             }
 
                         }
                         else
                         {
                             MessageBox.Show("Invalid Json. Please input valid json string.");
+                            richTextBoxSource.Text = String.Empty;
+                            return;
                         }
 
                     }
@@ -389,6 +424,33 @@ namespace JsonToCSharp
         {
             // Before leaving, save the settings
             SettingsManager.Instance.Save(GetType(), mySettings);
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(richTextBoxDest.Text))
+            {
+                Clipboard.SetText(richTextBoxDest.Text);
+                MessageBox.Show($"Class copied to clipboard");
+            }
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void MyPluginControl_Resize(object sender, EventArgs e)
+        {
+            Control control = (Control)sender;
+
+            // Ensure the Form remains square (Height = Width).
+            if (control.Size.Height != control.Size.Width)
+            {
+                control.Size = new Size(control.Size.Width, control.Size.Width);
+                richTextBoxSource.Width = control.Width / 2;
+                //richTextBoxDest.Width = control.Width / 4;
+            }
         }
     }
 }

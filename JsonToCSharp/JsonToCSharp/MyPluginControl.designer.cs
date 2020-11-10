@@ -36,13 +36,17 @@
             this.richTextBoxDest = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnConvert = new System.Windows.Forms.Button();
+            this.btnCopy = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblClose
             // 
+            this.lblClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblClose.AutoSize = true;
             this.lblClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClose.Location = new System.Drawing.Point(1011, 5);
+            this.lblClose.Location = new System.Drawing.Point(1059, 6);
             this.lblClose.Name = "lblClose";
             this.lblClose.Size = new System.Drawing.Size(99, 13);
             this.lblClose.TabIndex = 0;
@@ -73,9 +77,9 @@
             this.richTextBoxSource.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.richTextBoxSource.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxSource.Location = new System.Drawing.Point(15, 87);
+            this.richTextBoxSource.Location = new System.Drawing.Point(3, 77);
             this.richTextBoxSource.Name = "richTextBoxSource";
-            this.richTextBoxSource.Size = new System.Drawing.Size(594, 520);
+            this.richTextBoxSource.Size = new System.Drawing.Size(589, 533);
             this.richTextBoxSource.TabIndex = 4;
             this.richTextBoxSource.Text = "";
             // 
@@ -83,7 +87,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 61);
+            this.label2.Location = new System.Drawing.Point(4, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 13);
             this.label2.TabIndex = 5;
@@ -95,9 +99,9 @@
             this.richTextBoxDest.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBoxDest.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxDest.Location = new System.Drawing.Point(642, 87);
+            this.richTextBoxDest.Location = new System.Drawing.Point(646, 77);
             this.richTextBoxDest.Name = "richTextBoxDest";
-            this.richTextBoxDest.Size = new System.Drawing.Size(516, 520);
+            this.richTextBoxDest.Size = new System.Drawing.Size(512, 533);
             this.richTextBoxDest.TabIndex = 6;
             this.richTextBoxDest.Text = "";
             // 
@@ -114,7 +118,6 @@
             // 
             // btnConvert
             // 
-            this.btnConvert.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnConvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConvert.Location = new System.Drawing.Point(356, 10);
             this.btnConvert.Name = "btnConvert";
@@ -124,8 +127,43 @@
             this.btnConvert.UseVisualStyleBackColor = true;
             this.btnConvert.Click += new System.EventHandler(this.btnConvert_Click);
             // 
+            // btnCopy
+            // 
+            this.btnCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCopy.Location = new System.Drawing.Point(503, 10);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(111, 27);
+            this.btnCopy.TabIndex = 10;
+            this.btnCopy.Text = "Copy Class";
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(830, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(169, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Dynamic365 WebAPI C# Models";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(353, 50);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(247, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Convert Entities or Input your own json.";
+            // 
             // MyPluginControl
             // 
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.btnConvert);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.richTextBoxDest);
@@ -138,16 +176,14 @@
             this.Size = new System.Drawing.Size(1172, 629);
             this.OnCloseTool += new System.EventHandler(this.MyPluginControl_OnCloseTool_1);
             this.Load += new System.EventHandler(this.MyPluginControl_Load_1);
+            this.Resize += new System.EventHandler(this.MyPluginControl_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ToolStrip toolStripMenu;
-        private System.Windows.Forms.ToolStripButton tsbClose;
-        private System.Windows.Forms.ToolStripButton tsbSample;
-        private System.Windows.Forms.ToolStripSeparator tssSeparator1;
+       
         private System.Windows.Forms.Label lblClose;
         private System.Windows.Forms.ComboBox cmbEntities;
         private System.Windows.Forms.Label label1;
@@ -156,5 +192,8 @@
         private System.Windows.Forms.RichTextBox richTextBoxDest;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnConvert;
+        private System.Windows.Forms.Button btnCopy;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

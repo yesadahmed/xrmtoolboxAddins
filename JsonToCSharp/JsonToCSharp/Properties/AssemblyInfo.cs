@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("JsonToCSharp")]
-[assembly: AssemblyDescription("This assembly converts valid Json to CSharp. Helpful for Dynamic365 WebAPI models classes.")]
+[assembly: AssemblyDescription("Converts any CRM entity or json to c# class. Helpful for Dynamic365 WebAPI models.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Adnan Samuel")]
 [assembly: AssemblyProduct("JsonToCSharp")]

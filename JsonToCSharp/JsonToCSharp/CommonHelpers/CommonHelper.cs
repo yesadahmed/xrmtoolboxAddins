@@ -9,11 +9,11 @@ namespace JsonToCSharp.CommonHelpers
     public class CommonHelper
     {
 
-        public List<string>  skipStartsWith = new List<string>() { "msdyn_",
-"msfp_",
-"entitle",
-"resource",
-"sdkmessage",
+        public List<string> skipStartsWith = new List<string>() { "msdyn_",
+"msfp_","childincidentcount","cascadegrantrevokeaccessrecordstracker","systemusermanagermap","systemuserbusinessunitentitymap",
+"entitle","virtualresourcegroupresource","leadtoopportunitysalesprocess","systemuserprincipals","orginsightsnotification","delveactionhub",
+"resource","mbs_pluginprofile","fixedmonthlyfiscalcalendar","goalrollupquery","callbackregistration","expanderevent",
+"sdkmessage","expiredprocess","emailserverprofile",
 "user",
 "dynamic",
 "app",
