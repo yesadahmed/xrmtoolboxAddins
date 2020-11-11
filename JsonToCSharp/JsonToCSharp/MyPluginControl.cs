@@ -15,14 +15,13 @@ using XrmToolBox.Extensibility.Interfaces;
 using Microsoft.Xrm.Tooling.Connector;
 using Microsoft.Xrm.Sdk.Client;
 using System.Net.Http;
-using Newtonsoft.Json;
 using JsonToCSharp.Models;
 using JsonToCSharp.CommonHelpers;
-using Newtonsoft.Json.Linq;
 using Xamasoft.JsonClassGenerator.CodeWriters;
 using Xamasoft.JsonClassGenerator;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Web.Script.Serialization;
 
 namespace JsonToCSharp
 {
@@ -110,34 +109,12 @@ namespace JsonToCSharp
 
         #region HelperFunctions
 
-        private bool IsValidJson(string strInput)
+        private bool IsValidJson(string input)
         {
-            if (string.IsNullOrWhiteSpace(strInput)) { return false; }
-            strInput = strInput.Trim();
-            if ((strInput.StartsWith("{") && strInput.EndsWith("}")) || //For object
-                (strInput.StartsWith("[") && strInput.EndsWith("]"))) //For array
-            {
-                try
-                {
-                    var obj = JToken.Parse(strInput);
-                    return true;
-                }
-                catch (JsonReaderException jex)
-                {
-                    //Exception in parsing json
-                    Console.WriteLine(jex.Message);
-                    return false;
-                }
-                catch (Exception ex) //some other exception
-                {
-                    Console.WriteLine(ex.ToString());
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
+            if (string.IsNullOrWhiteSpace(input)) { return false; }
+            input = input.Trim();
+            return input.StartsWith("{") && input.EndsWith("}")
+                   || input.StartsWith("[") && input.EndsWith("]");
         }
 
 
@@ -176,7 +153,10 @@ namespace JsonToCSharp
                         {
                             var status = result.StatusCode;
                             var json = result.Content.ReadAsStringAsync().Result;
-                            var allEntities = JsonConvert.DeserializeObject<AllEntities>(json);
+                            JavaScriptSerializer ser = new JavaScriptSerializer();
+
+                            var allEntities = ser.Deserialize<AllEntities>(json);
+                           
                             if (allEntities != null && allEntities.value != null && allEntities.value.Count > 0)
                             {
                                 List<EntityModel> entitiesToInclude = new List<EntityModel>();
@@ -383,7 +363,6 @@ namespace JsonToCSharp
                         else
                         {
                             MessageBox.Show("Invalid Json. Please input valid json string.");
-                            richTextBoxSource.Text = String.Empty;
                             return;
                         }
 
@@ -449,7 +428,7 @@ namespace JsonToCSharp
             {
                 control.Size = new Size(control.Size.Width, control.Size.Width);
                 richTextBoxSource.Width = control.Width / 2;
-                //richTextBoxDest.Width = control.Width / 4;
+
             }
         }
     }

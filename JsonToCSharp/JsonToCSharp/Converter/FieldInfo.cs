@@ -68,7 +68,8 @@ namespace Xamasoft.JsonClassGenerator
 
         public string GetExamplesText()
         {
-            return string.Join(", ", Examples.Take(5).Select(x => JsonConvert.SerializeObject(x)).ToArray());
+            return "";
+            //return string.Join(", ", Examples.Take(5).Select(x => JsonConvert.SerializeObject(x)).ToArray());
         }
 
     }

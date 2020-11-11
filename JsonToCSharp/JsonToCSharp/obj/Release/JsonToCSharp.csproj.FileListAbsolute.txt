@@ -38,7 +38,6 @@ C:\Users\adsa\source\repos\Git\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\bin\Re
 C:\Users\adsa\source\repos\Git\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\bin\Release\ScintillaNET.xml
 C:\Users\adsa\source\repos\Git\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\bin\Release\XrmToolBox.PluginsStore.xml
 C:\Users\adsa\source\repos\Git\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\obj\Release\JsonToCSharp.MyPluginControl.resources
-C:\Users\adsa\source\repos\Git\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\obj\Release\JsonToCSharp.Properties.Resources.resources
 C:\Users\adsa\source\repos\Git\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\obj\Release\JsonToCSharp.csproj.GenerateResource.cache
 C:\Users\adsa\source\repos\Git\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\obj\Release\JsonToCSharp.csproj.CoreCompileInputs.cache
 C:\Users\adsa\source\repos\Git\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\obj\Release\JsonToCSharp.csproj.CopyComplete

@@ -43,4 +43,4 @@ C:\Users\adsa\source\repos\Git\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\obj\De
 C:\Users\adsa\source\repos\Git\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\obj\Debug\JsonToCSharp.csproj.CopyComplete
 C:\Users\adsa\source\repos\Git\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\obj\Debug\JsonToCSharp.dll
 C:\Users\adsa\source\repos\Git\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\obj\Debug\JsonToCSharp.pdb
-C:\Users\adsa\source\repos\Git\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\obj\Debug\JsonToCSharp.Properties.Resources.resources
+C:\Users\adsa\source\repos\Git\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\obj\Debug\JsonToCSharp.csprojAssemblyReference.cache

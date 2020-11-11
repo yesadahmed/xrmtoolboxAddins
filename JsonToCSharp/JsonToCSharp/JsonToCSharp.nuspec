@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>  
+    <id>JsonToCSharp</id>
+	<owners>Adnan Samuel</owners>
+    <version>1.0.0.0</version>
+    <title>JsonToCSharp</title>
+    <authors>Adnan Samuel</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>   
+    <projectUrl>https://github.com/yesadahmed/xrmtoolboxAddins/</projectUrl>    
+	<iconUrl>https://github.com/yesadahmed/xrmtoolboxAddins/blob/main/image80.png?raw=true</iconUrl>
+    <description>Convert valid Json to csharp model class. Dynamic365 WebAPI c# classes.</description>
+    <releaseNotes>json2csharp with feature to select CRM entities or provide custom json.</releaseNotes>
+    <copyright>Nov 11 2020</copyright>
+    <tags>XrmToolBox plugin json</tags>
+	<dependencies>
+      <group targetFramework=".NETFramework4.6.2" />	  
+    </dependencies>
+  </metadata>
+  <files>
+	<file src="bin\Release\JsonToCSharp.dll" target="lib\net462\Plugins" />
+  </files>
+</package>
