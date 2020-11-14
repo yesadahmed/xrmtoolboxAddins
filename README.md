@@ -1,4 +1,3 @@
-# xrmtoolboxAddins
 
 # JsonToCsharp
 A xrmtoolbox plugin for Dyanmic36 webapi to convert the json to CSharp models. You can also use this tool to convert any json to c# models.
