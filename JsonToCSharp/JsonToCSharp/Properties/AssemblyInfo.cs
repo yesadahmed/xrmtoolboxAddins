@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("JsonToCSharp")]
-[assembly: AssemblyDescription("Converts any CRM entity or json to c# class. Helpful for Dynamic365 WebAPI models.")]
+[assembly: AssemblyDescription("Converts any CRM entity or valid json to c# class. Works with OAuth or Certifcate type connections only.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Adnan Samuel")]
 [assembly: AssemblyProduct("JsonToCSharp")]
@@ -33,5 +33,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.0.1")]
+[assembly: AssemblyFileVersion("1.0.0.1")]
