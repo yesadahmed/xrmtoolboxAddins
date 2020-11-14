@@ -9,5 +9,5 @@ Since this plugin connects to CE webapi so by default it requires **OAuth or Cer
 For example regarding available OAuth connections in xrmtools are mentioned below:
 
 !(/blob/main/JsonToCSharp/images/conneciont.PNG)
-Format: ![xrmtoolbox connections](url)
+Format: ![xrmtoolbox connections](https://github.com/yesadahmed/xrmtoolboxAddins/blob/main/JsonToCSharp/images/conneciont.PNG)
 ###### The smallest heading
