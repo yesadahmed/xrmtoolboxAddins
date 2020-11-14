@@ -20,4 +20,6 @@ Url=https://contoso:8080/Test;AppId=<GUID>;RedirectUri=app://<GUID>; LoginPrompt
 <br/><br/>
 For more help about CE connection strings. [here](https://docs.microsoft.com/en-us/previous-versions/dynamicscrm-2016/developers-guide/mt608573(v=crm.8)?redirectedfrom=MSDN) <br/>
 See more info about CE WebAPI authentication methods. [here](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/webapi/authenticate-web-api). <br/>
+For more help you can raise an issuse [here](https://github.com/yesadahmed/xrmtoolboxAddins/issues)
 
+Adnan Samuel
