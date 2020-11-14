@@ -6,7 +6,19 @@ This tool requires only **OAuth or Certificate** types connection to get crm ent
 
 ## Connection Types
 Since this plugin connects to CE webapi so by default it requires **OAuth or Certifcate** type connections in xrmtoolbox.
-For example regarding available OAuth connections in xrmtools are mentioned below:
+<br/>For example regarding available OAuth connections in xrmtools are mentioned below:
 
 Format: ![xrmtoolbox connections](https://github.com/yesadahmed/xrmtoolboxAddins/blob/main/JsonToCSharp/images/Conn1.png)
-###### The smallest heading
+
+Some examples are as follows.
+
+Format: ![xrmtoolbox connections](https://github.com/yesadahmed/xrmtoolboxAddins/blob/main/JsonToCSharp/images/sdkcontrol.png)
+
+Format: ![xrmtoolbox connections](https://github.com/yesadahmed/xrmtoolboxAddins/blob/main/JsonToCSharp/images/conneciont.PNG)
+ AuthType=OAuth;Username=jsmith@contoso.onmicrosoft.com; Password=passcode;
+Url=https://contoso:8080/Test;AppId=<GUID>;RedirectUri=app://<GUID>; LoginPrompt=Never
+
+<br/><br/>
+For more help about CE connection strings here
+See more info about CE WebAPI authentication methods here.
+
