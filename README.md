@@ -47,8 +47,8 @@ have null in value and hence currently parser is not able to determine the valid
 2. Formatted json display in box.
 
 Feel free let me know about new features you want and any improvents you thought.
-I will try to address as soon as possible.
-you can riase new issues [here](https://github.com/yesadahmed/xrmtoolboxAddins/issues).
+I will try to address as soon as possible.<br/>
+you can riase new issues/fearures [here](https://github.com/yesadahmed/xrmtoolboxAddins/issues).
 
 **Adnan Samuel**
 
