@@ -17,6 +17,23 @@ Some examples are as follows.
  AuthType=OAuth;Username=jsmith@contoso.onmicrosoft.com; Password=passcode;
 Url=https://contoso:8080/Test;AppId=<GUID>;RedirectUri=app://<GUID>; LoginPrompt=Never
 
+## Examples
+Once you are connected through OAuth connection, by default the plugin will load all the mostly used entities as list.
+By default it will load the accounts entity and display only one random record, so the json is availble for conversion
+or customization. Feel free to add or remove the fields which you want but make sure the json must be valid in order to 
+work. Further the source json box (textbox) is editable which means you entirely replace the json and paste your own
+json in order to convert it to csharp calsses. Please notice the screen shots below.
+
+## Crm Entities Loaded
+![entities loaded](https://github.com/yesadahmed/xrmtoolboxAddins/blob/main/JsonToCSharp/images/entities_loaded.png)
+
+## Crm Entities Json
+![entities json](https://github.com/yesadahmed/xrmtoolboxAddins/blob/main/JsonToCSharp/images/convert_crm_json.png)
+
+## Custom Json
+![entities json](https://github.com/yesadahmed/xrmtoolboxAddins/blob/main/JsonToCSharp/images/custom%20json.png)
+
+
 <br/><br/>
 For more help about CE connection strings. [here](https://docs.microsoft.com/en-us/previous-versions/dynamicscrm-2016/developers-guide/mt608573(v=crm.8)?redirectedfrom=MSDN) <br/>
 See more info about CE WebAPI authentication methods. [here](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/webapi/authenticate-web-api). <br/>
