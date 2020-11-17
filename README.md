@@ -2,8 +2,9 @@
 # JsonToCsharp
 A xrmtoolbox plugin for Dyanmic36 webapi to convert the json to CSharp models. You can also use this tool to convert any json to c# models.
 This tool requires only **OAuth or Certificate** types connection to get crm entities as it connects to WebAPI.
+For connections and examples see below.
 
-## Connection Types
+## How to Connect in xrmtoolbox (connection Types)
 Since this plugin connects to CE webapi so by default it requires **OAuth or Certifcate** type connections in xrmtoolbox.
 <br/>For example regarding available OAuth connections in xrmtools are mentioned below:
 
@@ -41,4 +42,4 @@ For more help you can raise an issuse [here](https://github.com/yesadahmed/xrmto
 
 For null objects in api/json the relevant CLI will be object in c# class.
 
-Adnan Samuel
+**Adnan Samuel**
