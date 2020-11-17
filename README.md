@@ -21,7 +21,7 @@ Url=https://contoso:8080/Test;AppId=<GUID>;RedirectUri=app://<GUID>; LoginPrompt
 ## Examples
 Once you are connected through OAuth connection, by default the plugin will load all the mostly used entities as list.
 By default it will load the accounts entity and display only one random record, so the json is availble for conversion
-or customization. Feel free to add or remove the fields which you want but make sure the json must be valid in order to 
+or customization. <br/>Feel free to add or remove the fields which you want but make sure the json must be valid in order to 
 work. Further the source json box (textbox) is editable which means you entirely replace the json and paste your own
 json in order to convert it to csharp calsses. Please notice the screen shots below.
 
