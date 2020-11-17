@@ -1,6 +1,6 @@
 
 # JsonToCsharp
-A xrmtoolbox plugin for Dyanmic36 webapi to convert the json to CSharp models. You can also use this tool to convert any json to c# models.
+A xrmtoolbox plugin for Dynamic36 webapi to convert the json to CSharp models. You can also use this tool to convert any json to c# models.
 This tool requires only **OAuth or Certificate** types connection to get crm entities as it connects to WebAPI.
 <br/>For how to connect and working examples please see below.
 
@@ -46,7 +46,8 @@ have null in value and hence currently parser is not able to determine the valid
 1. Will add the possiblity to select entities and their attributes to build json. (select or search)
 2. Formatted json display in box.
 
-Feel free let me know about new features you want and improvents if possible.
+Feel free let me know about new features you want and any improvents you thought.
+I will try to address as soon as possible.
 you can riase new issues [here](https://github.com/yesadahmed/xrmtoolboxAddins/issues).
 
 **Adnan Samuel**
