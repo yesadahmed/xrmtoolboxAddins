@@ -40,6 +40,15 @@ For more help about CE connection strings. [here](https://docs.microsoft.com/en-
 See more info about CE WebAPI authentication methods. [here](https://docs.microsoft.com/en-us/dynamics365/customerengagement/on-premises/developer/webapi/authenticate-web-api). <br/>
 For more help you can raise an issuse [here](https://github.com/yesadahmed/xrmtoolboxAddins/issues)<br/>
 
-For null objects in api/json the relevant CLI will be object in c# class.
+Just an reminder the null values in json crossponds to object in c# class, becuase the parser expect some valid cli types instead we 
+have null in value and hence currently parser is not able to determine the valid type and it puts object type.
+
+## Next Releases Features (1.0.0.2)
+1. Will add the possiblityto select entities and their attributes to build json. (select or search)
+2. Formatted json display in box.
+
+Feel free let me know about new features you want and improvents if possible.
+you can riase new issues [here](https://github.com/yesadahmed/xrmtoolboxAddins/issues).
 
 **Adnan Samuel**
+
