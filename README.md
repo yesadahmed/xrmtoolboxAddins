@@ -43,8 +43,8 @@ For more help you can raise an issuse [here](https://github.com/yesadahmed/xrmto
 Just an reminder the null values in json crossponds to object in c# class, becuase the parser expect some valid cli types instead we 
 have null in value and hence currently parser is not able to determine the valid type and it puts object type.
 
-## Next Releases Features (1.0.0.2)
-1. Will add the possiblityto select entities and their attributes to build json. (select or search)
+## Next Releases Features (1.0.0.2) :+1:
+1. Will add the possiblity to select entities and their attributes to build json. (select or search)
 2. Formatted json display in box.
 
 Feel free let me know about new features you want and improvents if possible.
