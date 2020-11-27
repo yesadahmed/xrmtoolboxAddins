@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ArrayOfMostRecentlyUsedItem xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <MostRecentlyUsedItem>
-    <PluginName>JSON to CSharp</PluginName>
-    <ConnectionId>0dd2f7a9-6179-4173-8022-64b11b32a14a</ConnectionId>
-    <ConnectionName>GS!Wiz_conn_debug</ConnectionName>
-    <Date>2020-11-14T12:14:31.1643033+01:00</Date>
-  </MostRecentlyUsedItem>
-</ArrayOfMostRecentlyUsedItem>
