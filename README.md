@@ -5,6 +5,12 @@ This tool requires only **OAuth or Certificate** types connection to get crm ent
 <br/>For how to connect and working examples please see below.
 
 ## How to Connect in xrmtoolbox (connection Types)
+Once you have the xrmtoolbox you need to install this plugin form Tool Library as shown below.
+![xrmtoolbox connections](https://github.com/yesadahmed/xrmtoolboxAddins/blob/main/JsonToCSharp/images/library.png)
+
+Once the installion is done, you will see this plugin as follows:
+![xrmtoolbox connections](https://github.com/yesadahmed/xrmtoolboxAddins/blob/main/JsonToCSharp/images/plugin.PNG)
+
 Since this plugin connects to CE webapi so by default it requires **OAuth or Certifcate** type connections in xrmtoolbox.
 <br/>For example regarding available OAuth connections in xrmtools are mentioned below:
 
