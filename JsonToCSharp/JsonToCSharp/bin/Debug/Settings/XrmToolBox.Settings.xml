@@ -19,11 +19,11 @@
   <LastAdvertisementDisplay>2020-11-12T20:16:41.9666917+01:00</LastAdvertisementDisplay>
   <LastConnection>SDKLoginGS1Dev</LastConnection>
   <LastPlugin />
-  <LastUpdateCheck>2020-11-14T12:14:15.6887856+01:00</LastUpdateCheck>
+  <LastUpdateCheck>2020-11-17T11:23:45.6501857+01:00</LastUpdateCheck>
   <MergeConnectionFiles>false</MergeConnectionFiles>
   <MostUsedList>
     <PluginUseCount>
-      <Count>10</Count>
+      <Count>30</Count>
       <Name>JsonToCSharp.MyPlugin</Name>
     </PluginUseCount>
   </MostUsedList>
@@ -38,7 +38,7 @@
   <PluginsStoreShowUpdates xsi:nil="true" />
   <PluginsUpdateSkip>
     <PluginUpdateSkip>
-      <Date>2020-11-15T10:29:23.6836377+01:00</Date>
+      <Date>2020-11-18T08:22:57.1456813+01:00</Date>
       <Name>McTools.Xrm.ConnectionControls</Name>
       <Version>1.2020.10.35</Version>
     </PluginUpdateSkip>
@@ -47,7 +47,7 @@
   <ReuseConnections>false</ReuseConnections>
   <ShowPluginUpdatesPanelAtStartup>true</ShowPluginUpdatesPanelAtStartup>
   <FormSize>
-    <Height>735</Height>
+    <Height>1040</Height>
     <IsMaximized>false</IsMaximized>
     <Width>1716</Width>
   </FormSize>

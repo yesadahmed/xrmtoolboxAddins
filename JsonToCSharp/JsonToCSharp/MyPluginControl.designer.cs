@@ -40,11 +40,11 @@
 			this.label5 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.panel5 = new System.Windows.Forms.Panel();
-			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -163,7 +163,7 @@
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(547, 13);
 			this.label5.TabIndex = 12;
-			this.label5.Text = "Convert crm entities or cusotm json. Works with only OAuth or Certifcate type Con" +
+			this.label5.Text = "Convert crm entities or custom json. Works with only OAuth or Certifcate type Con" +
     "nections.";
 			// 
 			// tableLayoutPanel1
@@ -197,6 +197,18 @@
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(640, 44);
 			this.panel2.TabIndex = 15;
+			// 
+			// linkLabel1
+			// 
+			this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.linkLabel1.AutoSize = true;
+			this.linkLabel1.Location = new System.Drawing.Point(290, 1);
+			this.linkLabel1.Name = "linkLabel1";
+			this.linkLabel1.Size = new System.Drawing.Size(86, 13);
+			this.linkLabel1.TabIndex = 12;
+			this.linkLabel1.TabStop = true;
+			this.linkLabel1.Text = "Help Connection";
+			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
 			// 
 			// panel1
 			// 
@@ -236,18 +248,6 @@
 			this.panel5.Name = "panel5";
 			this.panel5.Size = new System.Drawing.Size(640, 14);
 			this.panel5.TabIndex = 18;
-			// 
-			// linkLabel1
-			// 
-			this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.linkLabel1.AutoSize = true;
-			this.linkLabel1.Location = new System.Drawing.Point(290, 1);
-			this.linkLabel1.Name = "linkLabel1";
-			this.linkLabel1.Size = new System.Drawing.Size(86, 13);
-			this.linkLabel1.TabIndex = 12;
-			this.linkLabel1.TabStop = true;
-			this.linkLabel1.Text = "Help Connection";
-			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
 			// 
 			// MyPluginControl
 			// 
