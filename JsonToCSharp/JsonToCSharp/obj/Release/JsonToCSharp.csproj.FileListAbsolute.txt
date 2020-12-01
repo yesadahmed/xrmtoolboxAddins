@@ -43,7 +43,6 @@ C:\Users\adsa\source\repos\Git\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\obj\Re
 C:\Users\adsa\source\repos\Git\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\obj\Release\JsonToCSharp.csproj.CopyComplete
 C:\Users\adsa\source\repos\Git\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\obj\Release\JsonToCSharp.dll
 C:\Users\adsa\source\repos\Git\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\obj\Release\JsonToCSharp.pdb
-C:\Users\adsa\source\repos\Git\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\obj\Release\JsonToCSharp.csprojAssemblyReference.cache
 C:\Users\adsa\source\repos\Git\json2csharpPlugin\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\bin\Release\JsonToCSharp.dll.config
 C:\Users\adsa\source\repos\Git\json2csharpPlugin\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\bin\Release\JsonToCSharp.dll
 C:\Users\adsa\source\repos\Git\json2csharpPlugin\xrmtoolboxAddins\JsonToCSharp\JsonToCSharp\bin\Release\JsonToCSharp.pdb

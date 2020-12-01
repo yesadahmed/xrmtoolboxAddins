@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("JsonToCSharp")]
-[assembly: AssemblyDescription("Converts any CRM entity or valid json to c# class. Works with OAuth or Certifcate type connections only.")]
+[assembly: AssemblyTitle("")]
+[assembly: AssemblyDescription(" only.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Adnan Samuel")]
 [assembly: AssemblyProduct("JsonToCSharp")]
